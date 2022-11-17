@@ -27,7 +27,7 @@ Some little preparations are needed to make this work.
 You can run the script just like that:
 
 ```sh
-(cd ~/Projects/create-docker-build-server; source ./builder.sh)
+source ~/Projects/create-docker-build-server/builder.sh
 ```
 
 It will ask you what you want to do. You can create a new server or destroy a previously created one.
