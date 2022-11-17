@@ -28,9 +28,9 @@ case $action in
     # Remove tmp file
     rm output.tmp
     echo "Tap this to reconnect in another shell:"
-    echo "export DOCKER_HOST=ssh://root@$server_url"
+    echo "export DOCKER_HOST=\"ssh://root@$server_url\""
     echo "Creating docker builder completed."
-    exit
+    return
     ;;
   2)
     # Destroy builder server
@@ -38,11 +38,13 @@ case $action in
     unset DOCKER_HOST
     terraform destroy -auto-approve
     echo "Docker builder server destroyed."
+    return
     ;;
   3)
-    exit
+    return
     ;;
   *)
-    exit
+    echo "unknown option"
+    return
     ;;
 esac
