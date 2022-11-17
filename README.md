@@ -18,7 +18,7 @@ brew install terraform
 Some little preparations are needed to make this work.
 
 - clone this repo
-- craete a file `secrets.auto.tfvars` and add your Hetzner Cloud token: `hcloud_token = "<your_token>"`
+- create a file `secrets.auto.tfvars` and add your Hetzner Cloud token: `hcloud_token = "<your_token>"`
 - grant the script execution permission: `chmod +x builder.sh`
 - make sure you have created ssh key and it's located in `~/.ssh/id_rsa.pub`. Otherwise you need to change the path in `main.tf` file.
   
