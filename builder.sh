@@ -35,6 +35,7 @@ case $action in
   2)
     # Destroy builder server
     echo "Destroying builder server..."
+    unset DOCKER_HOST
     terraform destroy -auto-approve
     echo "Docker builder server destroyed."
     ;;
