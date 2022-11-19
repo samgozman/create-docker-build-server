@@ -67,7 +67,7 @@ resource "hcloud_server" "builder" {
     ipv4_enabled = true
     ipv4         = hcloud_primary_ip.public.id
   }
-	firewall_ids = [hcloud_firewall.firewall.id]
+  firewall_ids = [hcloud_firewall.firewall.id]
   user_data = file("cloud-config.yml")
 }
 
