@@ -22,9 +22,9 @@ case $action in
     terraform -chdir=$scriptpath init
     touch $scriptpath/output.tmp
     terraform -chdir=$scriptpath apply -auto-approve > $scriptpath/output.tmp
-    echo "Docker builder server created with IP: $server_url"
     # Get url from Terraform output
     server_url=$(cat $scriptpath/output.tmp | sed -n 's/.*"docker-builder" = //p' | sed -r "s/\\\"//g")
+    echo "Docker builder server created with IP: $server_url"
     # Add server to known hosts
     ssh-keyscan -H $server_url >> ~/.ssh/known_hosts
     # Save url to ENV
